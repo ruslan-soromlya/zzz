@@ -3,7 +3,23 @@ services:
     _defaults:
         autowire: true
         autoconfigure: true
-
+    # makes classes in src/ available to be used as services
+    # this creates a service per class whose id is the fully-qualified class name
+    # ruslanchyk\CatBundle\Controller\CatController:
+    #     class: ruslanchyk\CatBundle\Controller\CatController
+    #     arguments:
+    #     # Add this tag to inject services into controller actions.
+    #     tags: ['controller.service_arguments'] 
+    #     # Call the setContainer method to get access to the services via
+    #     # $this->get() method.
+    #     calls:
+    #         - ['setContainer', ['@service_container']]
     ruslanchyk\CatBundle\:
         resource: '../src'
-
+        exclude:
+            - '../src/config/'
+            - '../src/DependencyInjection/'
+            - '../src/Entity/'
+    # ruslanchyk\CatBundle\Controller\:
+    #     resource: '../src/Controller'
+    #     tags: ['container.service_subscriber']
