@@ -1,0 +1,3 @@
+cat_bundle:
+    resource: '@CatBundle/config/routes.yaml'
+    prefix: cat-prefix

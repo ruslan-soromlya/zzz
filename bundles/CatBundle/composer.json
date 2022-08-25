@@ -1,0 +1,32 @@
+{
+    "name": "ruslanchyk/cat-bundle",
+    "version": "0.1.0",
+    "type": "symfony-bundle",
+    "description": "Symfony bundles tutorial example project",
+    "license": "proprietary",
+    "require": {
+        "php": ">=8.1"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "autoload": {
+        "psr-4": {
+            "ruslanchyk\\CatBundle\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "ruslanchyk\\CatBundle\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test" : "./vendor/bin/simple-phpunit"
+    },
+    "extra": {
+        "symfony": {
+            "allow-contrib": false,
+            "require": "5.0.*"
+        }
+    }
+}
